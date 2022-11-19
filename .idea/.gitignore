@@ -1,0 +1,14 @@
+# Default ignored files
+/workspace.xml
+**/mvnw
+**/mvnw.cmd
+**/.mvnw
+**/target/
+.idea
+/libraries/
+/vcs.xml
+/modules.xml
+/misc.xml
+/encodings.xml
+/compiler.xml
+/ycx_graduation_project.iml
