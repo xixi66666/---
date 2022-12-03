@@ -17,7 +17,7 @@
         <module>ware</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
-        <module>project_commom</module>
+        <module>project_common</module>
     </modules>
 
 </project>
