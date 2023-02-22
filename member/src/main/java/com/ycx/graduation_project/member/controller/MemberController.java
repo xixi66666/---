@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.ycx.graduation_project.member.feign.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,26 @@ import com.ycx.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+
+
+
+
+
+
+    //测试nacos
+    @Autowired
+    Test test;
+    @RequestMapping("/hudie")
+    public R test(){
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("杨晨曦");
+        R membercoupons = test.membercoupons();
+        return R.ok().put("member",memberEntity).put("coupons",membercoupons.get("coupons"));
+    }
+
+
+
 
     /**
      * 列表
