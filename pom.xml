@@ -18,6 +18,7 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>project_common</module>
+        <module>gateway</module>
     </modules>
     <build>
         <plugins>
