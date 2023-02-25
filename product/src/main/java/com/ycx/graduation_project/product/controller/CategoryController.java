@@ -1,6 +1,7 @@
 package com.ycx.graduation_project.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -32,14 +33,13 @@ public class CategoryController {
     private CategoryService categoryService;
 
     /**
-     * 列表
+     * 查出所有的分类以及子类，以树状结构组装起来
      */
-    @RequestMapping("/list")
-    @RequiresPermissions("product:category:list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
-
-        return R.ok().put("page", page);
+    @RequestMapping("/list/tree")
+    //@RequiresPermissions("product:category:list")
+    public R list(){
+        List<CategoryEntity> list = categoryService.listWithTree();
+        return R.ok().put("data", list);
     }
 
 

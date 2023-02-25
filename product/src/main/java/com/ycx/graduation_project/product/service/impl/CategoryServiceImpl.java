@@ -1,7 +1,10 @@
 package com.ycx.graduation_project.product.service.impl;
 
 import org.springframework.stereotype.Service;
-import java.util.Map;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -24,6 +27,32 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public List<CategoryEntity> listWithTree() {
+        /*
+        1.查出所有分类
+        2.组装出树形结构
+            先找出以及分类
+         */
+        List<CategoryEntity> entities = baseMapper.selectList(null);
+        List<CategoryEntity> level_1 = entities.stream().filter(categoryEntity -> categoryEntity.getParentCid() == 0).collect(Collectors.toList());
+        for(CategoryEntity categoryEntity : level_1){
+            categoryEntity.setChildren(getChildrens(categoryEntity,entities));
+        }
+        return level_1;
+    }
+
+    private List<CategoryEntity> getChildrens(CategoryEntity root,List<CategoryEntity> all) {
+        List<CategoryEntity> childrens = new ArrayList<>();
+        for(CategoryEntity categoryEntity : all){
+            if(root.getCatId().equals(categoryEntity.getParentCid())){
+                childrens.add(categoryEntity);
+                categoryEntity.setChildren(getChildrens(categoryEntity,all));
+            }
+        }
+        return childrens;
     }
 
 }
