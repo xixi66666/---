@@ -1,0 +1,7 @@
+本系统是B2C 模式的电商系统，并基于业务进行服务的微化细分，
+各个服务独立部署。在分布式环境下利用SpringCloud框架将业务划分为订单服务，购物车服务，支付服务，用户管理服务，商品管理服务，文件上传服务，后台管理服务。
+
+
+采用SpringCloud架构，利用SpringBoot搭建应用，
+Nacos作为服务的注册，配置中心。OpenFeign实现服务远程交互，
+Gateway作为服务网关，RabbitMq作为延迟队列，Redis作为缓存中间件，MySQL进行数据的持久化处理，并且MybatisPlus作为持久化框架
