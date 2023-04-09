@@ -10,6 +10,7 @@ server:
     context-path: /renren-fast
 
 spring:
+
   # 环境 dev|test|prod
   profiles:
     active: dev
@@ -42,6 +43,11 @@ spring:
   application:
     name: renren-fast
   cloud:
+    alicloud:
+      access-key: LTAI5tLW7Kj49WdJzaYU9by1
+      secret-key: vDkBrTdDcR1EAORrJMQndGKRWbrUzc
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848

@@ -6,6 +6,11 @@ spring:
     url: jdbc:mysql://124.221.208.250:3307/ycx_sms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
+    alicloud:
+      access-key: LTAI5tLW7Kj49WdJzaYU9by1
+      secret-key: vDkBrTdDcR1EAORrJMQndGKRWbrUzc
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
     gateway:
       routes:
         - id: test_route
@@ -28,6 +33,7 @@ spring:
             - Path=/api/**
           filters:
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
 #
 #        - id: third_party_route
 #          uri: lb://gulimall-third-party
