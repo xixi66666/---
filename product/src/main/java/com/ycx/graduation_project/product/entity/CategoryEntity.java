@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 /**
@@ -64,7 +65,11 @@ public class CategoryEntity implements Serializable {
 
 	/*
 	子分类
+		@JsonInclude 注解解决的问题是：
+		在级联选择框的时候会出现子菜单还有一级空白菜单，使用	@JsonInclude 来取消
 	 */
+
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	@TableField(exist = false)
 	private List<CategoryEntity> children;
 

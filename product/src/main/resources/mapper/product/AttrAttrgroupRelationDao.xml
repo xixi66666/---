@@ -11,5 +11,9 @@
         <result property="attrSort" column="attr_sort"/>
     </resultMap>
 
+    <select id="selectByAttrId" resultType="com.ycx.graduation_project.product.entity.AttrAttrgroupRelationEntity">
+        select * from pms_attr_attrgroup_relation where attr_id = #{attrId}
+    </select>
+
 
 </mapper>

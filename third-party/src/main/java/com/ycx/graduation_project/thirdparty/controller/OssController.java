@@ -7,6 +7,7 @@ import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
+import com.ycx.common.utils.R;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -37,7 +38,7 @@ public class OssController {
     OSS ossClient;
 
     @RequestMapping("/oss/policy")
-    public Map<String, String> policy() {
+    public R policy() {
         // 填写Bucket名称，例如examplebucket。
         String bucket = "ycx-graduation-project";
         // 填写Host地址，格式为https://bucketname.endpoint。
@@ -62,7 +63,6 @@ public class OssController {
             String encodedPolicy = BinaryUtil.toBase64String(binaryData);
             String postSignature = ossClient.calculatePostSignature(postPolicy);
 
-
             respMap.put("accessId", "LTAI5tLW7Kj49WdJzaYU9by1");
             respMap.put("policy", encodedPolicy);
             respMap.put("signature", postSignature);
@@ -75,7 +75,7 @@ public class OssController {
             // Assert.fail(e.getMessage());
             System.out.println(e.getMessage());
         }
-        return respMap;
+        return R.ok().put("data",respMap);
     }
 
 

@@ -28,9 +28,9 @@ class ThirdPartyApplicationTests {
 //        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 
         try {
-            InputStream inputStream = new FileInputStream("D:\\picture\\壁纸\\9211d2ece93ce654449ed70bab72c884.jpg");
+            InputStream inputStream = new FileInputStream("D:\\picture\\壁纸\\8.jpg");
             // 创建PutObjectRequest对象。
-            PutObjectRequest putObjectRequest = new PutObjectRequest("ycx-graduation-project", "amg.jpg", inputStream);
+            PutObjectRequest putObjectRequest = new PutObjectRequest("ycx-graduation-project", "美女.jpg", inputStream);
             // 设置该属性可以返回response。如果不设置，则返回的response为空。
             putObjectRequest.setProcess("true");
             // 创建PutObject请求。

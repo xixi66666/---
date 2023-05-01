@@ -3,7 +3,10 @@ package com.ycx.graduation_project.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ycx.common.utils.PageUtils;
 import com.ycx.graduation_project.product.entity.AttrEntity;
+import com.ycx.graduation_project.product.vo.AttrRespVo;
+import com.ycx.graduation_project.product.vo.AttrVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +19,15 @@ import java.util.Map;
 public interface AttrService extends IService<AttrEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    void saveAttr(AttrVo attr);
+
+    PageUtils queryBaseAttrPage(Map<String, Object> params, Long attrId, String type);
+
+    AttrRespVo getAttrInfo(Long attrId);
+
+    void updateAttr(AttrVo attr);
+
+    List<AttrEntity> getRelationAttr(Long attrgroupId);
 }
 
