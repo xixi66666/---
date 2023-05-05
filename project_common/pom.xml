@@ -101,6 +101,16 @@
             <version>6.0.5</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.14</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
         <!--        <dependency>-->
 <!--            <groupId>io.renren</groupId>-->
 <!--            <artifactId>renren-fast</artifactId>-->

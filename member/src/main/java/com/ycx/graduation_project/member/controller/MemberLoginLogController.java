@@ -3,7 +3,6 @@ package com.ycx.graduation_project.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-//import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,9 +20,9 @@ import com.ycx.common.utils.R;
 /**
  * 会员登录记录
  *
- * @author Yang Chenxi
- * @email 1253324157@gmail.com
- * @date 2022-11-21 16:34:18
+ * @author 夏沫止水
+ * @email HeJieLin@gulimall.com
+ * @date 2020-05-22 19:42:06
  */
 @RestController
 @RequestMapping("member/memberloginlog")

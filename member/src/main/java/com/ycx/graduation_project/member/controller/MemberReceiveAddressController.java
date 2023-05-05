@@ -1,35 +1,41 @@
 package com.ycx.graduation_project.member.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-//import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.ycx.graduation_project.member.entity.MemberReceiveAddressEntity;
-import com.ycx.graduation_project.member.service.MemberReceiveAddressService;
 import com.ycx.common.utils.PageUtils;
 import com.ycx.common.utils.R;
+import com.ycx.graduation_project.member.entity.MemberReceiveAddressEntity;
+import com.ycx.graduation_project.member.service.MemberReceiveAddressService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 
 
 /**
  * 会员收货地址
  *
- * @author Yang Chenxi
- * @email 1253324157@gmail.com
- * @date 2022-11-21 16:34:18
- */
+**/
 @RestController
 @RequestMapping("member/memberreceiveaddress")
 public class MemberReceiveAddressController {
     @Autowired
     private MemberReceiveAddressService memberReceiveAddressService;
+
+
+    /**
+     * 根据会员id查询会员的所有地址
+     * @param memberId
+     * @return
+     */
+    @GetMapping(value = "/{memberId}/address")
+    public List<MemberReceiveAddressEntity> getAddress(@PathVariable("memberId") Long memberId) {
+
+        List<MemberReceiveAddressEntity> addressList = memberReceiveAddressService.getAddress(memberId);
+
+        return addressList;
+    }
 
     /**
      * 列表
