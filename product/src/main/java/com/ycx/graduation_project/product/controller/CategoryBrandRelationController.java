@@ -1,15 +1,16 @@
 package com.ycx.graduation_project.product.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import com.ycx.graduation_project.product.entity.BrandEntity;
+import com.ycx.graduation_project.product.vo.BrandVo;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.ycx.graduation_project.product.entity.CategoryBrandRelationEntity;
 import com.ycx.graduation_project.product.service.CategoryBrandRelationService;
@@ -85,6 +86,20 @@ public class CategoryBrandRelationController {
 		categoryBrandRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
+    }
+
+    @GetMapping("/brands/list")
+    public R relationBrandsList(@RequestParam(value = "catId",required = true) Long catId){
+        List<BrandEntity> vos = categoryBrandRelationService.getBrandsByCatId(catId);
+        List<BrandVo> brandVos = new ArrayList<>();
+        for(BrandEntity brandEntity : vos){
+            BrandVo brandVo = new BrandVo();
+            brandVo.setBrandId(brandEntity.getBrandId());
+            brandVo.setBrandName(brandEntity.getName());
+            brandVos.add(brandVo);
+            System.out.println(brandVo.toString());
+        }
+        return R.ok().put("data",brandVos);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.xunqi.gulimall.member.config;
+package com.ycx.graduation_project.member.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +10,8 @@ import org.springframework.session.web.http.DefaultCookieSerializer;
 /**
  * @Description: springSession配置类
  * @Created: with IntelliJ IDEA.
- * @author: 夏沫止水
- * @createTime: 2020-06-29 13:36
+ * @author: 杨晨曦
+ * 2023-5: 2023-05-059 13:36
  **/
 
 @Configuration

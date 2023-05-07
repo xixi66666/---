@@ -20,10 +20,6 @@ import java.util.Map;
 
 /**
  * 会员
- *
- * @author 夏沫止水
- * @email HeJieLin@gulimall.com
- * @date 2020-05-22 19:42:06
  */
 @RestController
 @RequestMapping("member/member")
@@ -74,7 +70,6 @@ public class MemberController {
 
     @PostMapping(value = "/weixin/login")
     public R weixinLogin(@RequestParam("accessTokenInfo") String accessTokenInfo) {
-
         MemberEntity memberEntity = memberService.login(accessTokenInfo);
         if (memberEntity != null) {
             return R.ok().setData(memberEntity);
@@ -90,7 +85,7 @@ public class MemberController {
     //@RequiresPermissions("member:member:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberService.queryPage(params);
-
+        System.out.println(params.toString());
         return R.ok().put("page", page);
     }
 

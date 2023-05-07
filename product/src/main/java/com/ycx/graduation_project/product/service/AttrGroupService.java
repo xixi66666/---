@@ -3,7 +3,9 @@ package com.ycx.graduation_project.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ycx.common.utils.PageUtils;
 import com.ycx.graduation_project.product.entity.AttrGroupEntity;
+import com.ycx.graduation_project.product.vo.AttrGroupWithAttrsVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,5 +20,7 @@ public interface AttrGroupService extends IService<AttrGroupEntity> {
     PageUtils queryPage(Map<String, Object> params);
 
     PageUtils queryPage(Map<String, Object> params, Long catelogId);
+
+    List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatelogId(Long catelogId);
 }
 

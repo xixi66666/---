@@ -3,7 +3,6 @@ package com.ycx.graduation_project.ware.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-//import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,9 +20,9 @@ import com.ycx.common.utils.R;
 /**
  * 库存工作单
  *
- * @author Yang Chenxi
- * @email 1253324157@gmail.com
- * @date 2022-11-21 16:36:46
+ * @author 杨晨曦
+ * @email HeJieLin@gulimall.com
+ * @date 2023-05-06 19:55:33
  */
 @RestController
 @RequestMapping("ware/wareordertask")

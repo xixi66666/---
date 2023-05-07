@@ -3,6 +3,7 @@ package com.ycx.graduation_project.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,7 +34,7 @@ public class MemberLevelController {
     //@RequiresPermissions("member:memberlevel:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberLevelService.queryPage(params);
-
+        System.out.println("进入方法了");
         return R.ok().put("page", page);
     }
 

@@ -1,35 +1,42 @@
 package com.ycx.graduation_project.ware.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-//import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.ycx.graduation_project.ware.entity.WareInfoEntity;
-import com.ycx.graduation_project.ware.service.WareInfoService;
 import com.ycx.common.utils.PageUtils;
 import com.ycx.common.utils.R;
+import com.ycx.graduation_project.ware.entity.WareInfoEntity;
+import com.ycx.graduation_project.ware.service.WareInfoService;
+import com.ycx.graduation_project.ware.vo.FareVo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
  * 仓库信息
  *
- * @author Yang Chenxi
- * @email 1253324157@gmail.com
- * @date 2022-11-21 16:36:46
+ * @author 杨晨曦
+ * @email HeJieLin@gulimall.com
+ * @date 2023-05-06 19:55:33
  */
 @RestController
 @RequestMapping("ware/wareinfo")
 public class WareInfoController {
     @Autowired
     private WareInfoService wareInfoService;
+
+    /**
+     * 获取运费信息
+     * @return
+     */
+    @GetMapping(value = "/fare")
+    public R getFare(@RequestParam("addrId") Long addrId) {
+
+        FareVo fare = wareInfoService.getFare(addrId);
+
+        return R.ok().setData(fare);
+    }
 
     /**
      * 列表

@@ -79,19 +79,19 @@ public class AttrGroupController {
         return R.ok().put("data",entities);
     }
 
-//    ///product/attrgroup/{catelogId}/withattr
-//    //获取分类下所有分组&关联属性
-//    @GetMapping(value = "/{catelogId}/withattr")
-//    public R getAttrGroupWithAttrs(@PathVariable("catelogId") Long catelogId) {
-//
-//        //1、查出当前分类下的所有属性分组
-//        //2、查出每个属性分组下的所有属性
-//        List<AttrGroupWithAttrsVo> vos = attrGroupService.getAttrGroupWithAttrsByCatelogId(catelogId);
-//
-//
-//        return R.ok().put("data",vos);
-//
-//    }
+    ///product/attrgroup/{catelogId}/withattr
+    //获取分类下所有分组&关联属性
+    @GetMapping(value = "/{catelogId}/withattr")
+    public R getAttrGroupWithAttrs(@PathVariable("catelogId") Long catelogId) {
+
+        //1、查出当前分类下的所有属性分组
+        //2、查出每个属性分组下的所有属性
+        List<AttrGroupWithAttrsVo> vos = attrGroupService.getAttrGroupWithAttrsByCatelogId(catelogId);
+
+
+        return R.ok().put("data",vos);
+
+    }
 
     /**
      * 保存

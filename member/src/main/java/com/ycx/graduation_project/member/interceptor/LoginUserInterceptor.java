@@ -16,8 +16,8 @@ import static com.ycx.common.constant.AuthServerConstant.LOGIN_USER;
 /**
  * @Description: 登录拦截器
  * @Created: with IntelliJ IDEA.
- * @author: 夏沫止水
- * @createTime: 2020-07-02 18:37
+ * @author: 杨晨曦
+ * 2023-5
  **/
 
 @Component

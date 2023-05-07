@@ -20,6 +20,12 @@
         <dependency>
             <groupId>com.ycx.graduation_project</groupId>
             <artifactId>project_common</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.validation</groupId>
+                    <artifactId>validation-api</artifactId>
+                </exclusion>
+            </exclusions>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -3,8 +3,8 @@ package com.ycx.common.constant;
 /**
  * @Description:
  * @Created: with IntelliJ IDEA.
- * @author: 夏沫止水
- * @createTime: 2020-06-27 10:57
+ * @author: 杨晨曦
+ * 2023-5: 2023-05-08 10:57
  **/
 public class AuthServerConstant {
 

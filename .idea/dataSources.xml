@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="@124.221.208.250" uuid="3a2be8ad-6d0d-4058-b424-f5f2e6c08976">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://124.221.208.250:3307/ycx_ums</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="ycx_pms@124.221.208.250" uuid="f7c2f58e-26ef-4be8-99e2-532cb8acf23f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://124.221.208.250:3307/ycx_pms</jdbc-url>
+    </data-source>
+  </component>
+</project>

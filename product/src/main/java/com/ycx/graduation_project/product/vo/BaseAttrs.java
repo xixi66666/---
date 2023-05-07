@@ -4,7 +4,7 @@ package com.ycx.graduation_project.product.vo;
 import lombok.Data;
 
 /**
- * Auto-generated: 2020-05-31 11:3:26
+ * Auto-generated: 2023-05-11 11:3:26
  *
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/

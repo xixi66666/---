@@ -9,9 +9,9 @@ import java.util.Map;
 /**
  * 会员等级
  *
- * @author 夏沫止水
+ * @author 杨晨曦
  * @email HeJieLin@gulimall.com
- * @date 2020-05-22 19:42:06
+ * @date 2023-05-06 19:42:06
  */
 public interface MemberLevelService extends IService<MemberLevelEntity> {
 

@@ -1,4 +1,4 @@
-package com.xunqi.gulimall.member.config;
+package com.ycx.graduation_project.member.config;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @Description: feign拦截器功能
  * @Created: with IntelliJ IDEA.
- * @author: 夏沫止水
- * @createTime: 2020-07-02 21:10
+ * @author: 杨晨曦
+ * 2023-5: 2023-5-7 21:10
  **/
 
 @Configuration

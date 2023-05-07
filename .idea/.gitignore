@@ -12,3 +12,6 @@
 /encodings.xml
 /compiler.xml
 /ycx_graduation_project.iml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml

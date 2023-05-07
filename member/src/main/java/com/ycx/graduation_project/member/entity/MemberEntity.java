@@ -1,5 +1,6 @@
 package com.ycx.graduation_project.member.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -10,9 +11,9 @@ import java.util.Date;
 /**
  * 会员
  * 
- * @author 夏沫止水
+ * @author 杨晨曦
  * @email HeJieLin@gulimall.com
- * @date 2020-05-22 19:42:06
+ * @date 2023-05-06 19:42:06
  */
 @Data
 @TableName("ums_member")
@@ -96,16 +97,19 @@ public class MemberEntity implements Serializable {
 	/**
 	 * 社交登录UID
 	 */
+	@TableField(exist = false)
 	private String socialUid;
 
 	/**
 	 * 社交登录TOKEN
 	 */
+	@TableField(exist = false)
 	private String accessToken;
 
 	/**
 	 * 社交登录过期时间
 	 */
+	@TableField(exist = false)
 	private long expiresIn;
 
 }

@@ -3,8 +3,8 @@ package com.ycx.common.constant;
 /**
  * @Description: 购物车常量
  * @Created: with IntelliJ IDEA.
- * @author: 夏沫止水
- * @createTime: 2020-06-30 17:39
+ * @author: 杨晨曦
+ * 2023-5: 2023-05-10 17:39
  **/
 public class CartConstant {
 
