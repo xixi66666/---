@@ -3,6 +3,7 @@ package com.ycx.graduation_project.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ycx.common.utils.PageUtils;
 import com.ycx.graduation_project.product.entity.CategoryEntity;
+import com.ycx.graduation_project.product.vo.Catelog2Vo;
 
 import java.util.List;
 import java.util.Map;
@@ -29,5 +30,9 @@ public interface CategoryService extends IService<CategoryEntity> {
      * @return
      */
     Long[] findCatelogPath(Long catelogId);
+
+    List<CategoryEntity> getLevel1Categorys();
+
+    Map<String, List<Catelog2Vo>> getCatalogJson();
 }
 

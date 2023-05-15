@@ -4,10 +4,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
 //import com.ycx.common.to.OrderTo;
 //import com.ycx.common.to.mq.StockLockedTo;
 import com.ycx.common.utils.PageUtils;
+import com.ycx.common.vo.SkuHasStockVo;
 import com.ycx.graduation_project.ware.entity.WareSkuEntity;
-import com.ycx.graduation_project.ware.vo.SkuHasStockVo;
 import com.ycx.graduation_project.ware.vo.WareSkuLockVo;
-import com.ycx.common.utils.PageUtils;
 
 import java.util.List;
 import java.util.Map;

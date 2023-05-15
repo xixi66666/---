@@ -2,7 +2,6 @@ package com.ycx.graduation_project.ware.vo;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**

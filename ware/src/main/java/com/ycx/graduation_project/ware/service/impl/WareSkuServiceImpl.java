@@ -1,11 +1,13 @@
 package com.ycx.graduation_project.ware.service.impl;
 
-import com.ycx.graduation_project.ware.vo.SkuHasStockVo;
+import com.ycx.common.vo.SkuHasStockVo;
 import com.ycx.graduation_project.ware.vo.WareSkuLockVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -46,7 +48,14 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
 
     @Override
     public List<SkuHasStockVo> getSkuHasStock(List<Long> skuIds) {
-        return null;
+        List<SkuHasStockVo> skuHasStockVos = skuIds.stream().map(item -> {
+            Long count = this.baseMapper.getSkuStock(item);
+            SkuHasStockVo skuHasStockVo = new SkuHasStockVo();
+            skuHasStockVo.setSkuId(item);
+            skuHasStockVo.setHasStock(count == null?false:count > 0);
+            return skuHasStockVo;
+        }).collect(Collectors.toList());
+        return skuHasStockVos;
     }
 
     @Override

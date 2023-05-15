@@ -3,7 +3,9 @@ package com.ycx.graduation_project.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ycx.common.utils.PageUtils;
 import com.ycx.graduation_project.product.entity.SkuInfoEntity;
+import com.ycx.graduation_project.product.vo.SkuItemVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,5 +22,9 @@ public interface SkuInfoService extends IService<SkuInfoEntity> {
     void saveSkuInfo(SkuInfoEntity skuInfoEntity);
 
     PageUtils queryPageByCondition(Map<String, Object> params);
+
+    List<SkuInfoEntity> getSkusBySpuId(Long spuId);
+
+    SkuItemVo item(Long skuId);
 }
 
